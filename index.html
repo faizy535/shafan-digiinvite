@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nikkah of Shafan & Heena</title>
+    <!-- Google Fonts for crisp modern layouts, serif elegance, fluid groovy cursive elements, and calligraphic scripts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- UNIFIED MAROON PALETTE SYSTEM --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Precise Luxury Tones */
+            --bg-maroon: #3A090D;      /* Deep Velvet Maroon (Solid Theme) */
+            
+            --gold-bright: #E5C17D;    /* Vivid Metallic Gold for high contrast */
+            --text-light: #FAF8F5;     /* Pure Soft Ivory Text */
+            --text-muted: #D9C3BE;     /* Muted Rose-Sand for translations */
+            
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --font-groovy: 'Playfair Display', serif;
+            --font-arabic: 'Amiri', 'Traditional Arabic', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-light);
+            background-color: var(--bg-maroon);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* --- SCREEN FLOW WITH CALLIGRAPHIC ACCENTS --- */
+        .screen {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2.5rem;
+            position: relative;
+            
+            /* Luxury dot-grid canvas texture overlaid onto the solid maroon */
+            background-image: radial-gradient(rgba(229, 193, 125, 0.05) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        /* Calligraphic Gold Frame Border Accent */
+        .calligraphic-frame {
+            position: absolute;
+            top: 2rem;
+            bottom: 2rem;
+            left: 2rem;
+            right: 2rem;
+            border: 1px solid rgba(229, 193, 125, 0.12);
+            pointer-events: none;
+        }
+        
+        .calligraphic-frame::before {
+            content: '❖';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold-bright);
+            font-size: 0.9rem;
+        }
+
+        /* --- CINEMATIC ANIMATIONS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                        transform 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.45s; }
+        .delay-3 { transition-delay: 0.7s; }
+
+        /* --- SPECIALIST ARABIC STYLE --- */
+        .arabic-calligraphy {
+            font-family: var(--font-arabic);
+            font-weight: 400;
+            direction: rtl;
+            line-height: 1.4;
+            font-variant-ligatures: common-ligatures contextual;
+            font-feature-settings: "liga" 1, "calt" 1;
+        }
+
+        .bismillah-text {
+            font-size: 4.5rem;
+            color: var(--gold-bright);
+            margin-bottom: 1.8rem;
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .translation-text {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--text-muted);
+            max-width: 620px;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- TYPOGRAPHY PATTERNS --- */
+        .label-caps {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--gold-bright);
+            margin-bottom: 2rem;
+        }
+
+        .couple-names {
+            font-family: var(--font-serif);
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            line-height: 1.15;
+            color: var(--text-light);
+            text-shadow: 0px 2px 10px rgba(0,0,0,0.4);
+        }
+
+        .ampersand {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            display: block;
+            color: var(--gold-bright);
+            margin: 0.4rem 0;
+            font-style: italic;
+        }
+
+        /* Two-line date frame system */
+        .date-display {
+            font-family: var(--font-sans);
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            border-top: 1px solid rgba(229, 193, 125, 0.35);
+            border-bottom: 1px solid rgba(229, 193, 125, 0.35);
+            padding: 1.5rem 2.5rem;
+            display: inline-block;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            line-height: 1.6;
+        }
+
+        .date-line {
+            display: block;
+        }
+
+        .date-sub {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--gold-bright);
+            margin-top: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .venue-title {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .venue-location {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* --- STYLES FOR GROOVY ARTISTIC INITIALS --- */
+        .modern-initials-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .initial-letter {
+            font-family: var(--font-groovy);
+            font-size: 8.5rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--text-light);
+            line-height: 1;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .initial-ampersand {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-style: italic;
+            font-weight: 300;
+            color: var(--gold-bright);
+            margin: 0 0.2rem;
+            transform: translateY(15px);
+        }
+
+        .time-badge {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--gold-bright);
+            margin-top: 2rem;
+            letter-spacing: 2px;
+        }
+
+        .initials-sub {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        /* --- EXTRA SLEEK FINISH FOR REGARDS SCREEN --- */
+        .sleek-regards-title {
+            font-family: var(--font-sans);
+            font-size: 1.6rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* --- SLEEK FOOTER LINK (NUDGED UPWARDS) --- */
+        .creator-footer {
+            position: absolute;
+            bottom: 3.5rem; /* Lifted up to sit neatly inside the frame border */
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(217, 195, 190, 0.4);
+            transition: color 0.3s ease;
+        }
+
+        .creator-footer a {
+            color: rgba(217, 195, 190, 0.6);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(217, 195, 190, 0.2);
+            padding-bottom: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .creator-footer a:hover {
+            color: var(--gold-bright);
+            border-bottom-color: var(--gold-bright);
+        }
+
+        /* --- SCROLL INDICATOR ANIMATION --- */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--text-muted);
+            animation: luxuryFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes luxuryFloat {
+            0% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(-8px); opacity: 1; color: var(--gold-bright); text-shadow: 0 0 8px rgba(229,193,125,0.4); }
+            100% { transform: translateY(0); opacity: 0.4; }
+        }
+
+        /* --- MOBILE CONTAINER RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .screen { padding: 1.5rem; }
+            .calligraphic-frame { top: 1rem; bottom: 1rem; left: 1rem; right: 1rem; }
+            .bismillah-text { font-size: 3rem; }
+            .couple-names { font-size: 3.5rem; }
+            .venue-title { font-size: 2.8rem; }
+            .initial-letter { font-size: 6rem; }
+            .initial-ampersand { font-size: 3rem; transform: translateY(8px); }
+            .time-badge { font-size: 1.6rem; }
+            .date-display { font-size: 1.5rem; padding: 1rem 1.8rem; }
+            .sleek-regards-title { font-size: 1.2rem; letter-spacing: 5px; }
+            .creator-footer { font-size: 0.6rem; letter-spacing: 1.5px; bottom: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+
+        <!-- SCREEN 1: BISMILLAH -->
+        <section class="screen" id="screen-bismillah">
+            <div class="calligraphic-frame"></div>
+            <div class="arabic-calligraphy bismillah-text reveal">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="translation-text reveal delay-1">“In the name of Allah, the Most Gracious, the Most Merciful”</div>
+            <div class="scroll-indicator">Scroll to open</div>
+        </section>
+
+        <!-- SCREEN 2: BRIDE & GROOM NAMES -->
+        <section class="screen" id="screen-couple">
+            <div class="calligraphic-frame"></div>
+            <div class="label-caps reveal">THE NIKKAH OF</div>
+            <div class="couple-names reveal delay-1">
+                Shafan <span class="ampersand">&</span> Heena
+            </div>
+            <div class="scroll-indicator">↓</div>
+        </section>
+
+        <!-- SCREEN 3: DATE -->
+        <section class="screen" id="screen-date">
+            <div class="calligraphic-frame"></div>
+            <div class="label-caps reveal">Save Our Date</div>
+            <div class="date-display reveal delay-1">
+                <span class="date-line">August</span>
+                <span class="date-line">09, 2026</span>
+            </div>
+            <div class="date-sub reveal delay-2">Sunday</div>
+            <div class="scroll-indicator">↓</div>
+        </section>
+
+        <!-- SCREEN 4: WEDDING VENUE -->
+        <section class="screen" id="screen-venue">
+            <div class="calligraphic-frame"></div>
+            <div class="label-caps reveal">The Venue</div>
+            <div class="venue-title reveal delay-1">S.M Mahal</div>
+            <div class="venue-location reveal delay-2">Madhavalayam</div>
+            <div class="scroll-indicator">↓</div>
+        </section>
+
+        <!-- SCREEN 5: INITIALS & TIMING -->
+        <section class="screen" id="screen-initials">
+            <div class="calligraphic-frame"></div>
+            <div class="modern-initials-container reveal">
+                <span class="initial-letter">S</span>
+                <span class="initial-ampersand">&</span>
+                <span class="initial-letter">H</span>
+            </div>
+            <div class="time-badge reveal delay-1">Nikkah 12:00 PM Onwards</div>
+            <div class="initials-sub reveal delay-2">With the Blessings of the Almighty</div>
+            <div class="scroll-indicator">↓</div>
+        </section>
+
+        <!-- SCREEN 6: BRIDEGROOM JOURNEY -->
+        <section class="screen" id="screen-journey">
+            <div class="calligraphic-frame"></div>
+            <div class="reveal delay-1" style="font-family: var(--font-sans); font-size: 1.1rem; font-weight: 400; letter-spacing: 4px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 2rem;">Bridegroom Starts From</div>
+            <div class="venue-title reveal delay-2">Bismi Mahal</div>
+            <div class="venue-location reveal delay-3">Colachel</div>
+            <div class="scroll-indicator">↓</div>
+        </section>
+
+        <!-- SCREEN 7: REGARDS -->
+        <section class="screen" id="screen-regards">
+            <div class="calligraphic-frame"></div>
+            <div class="label-caps reveal">Warm Regards From</div>
+            <div class="sleek-regards-title reveal delay-1">Our Family & Friends</div>
+            
+            <!-- Elegant signature hyperlink nudged upwards -->
+            <div class="creator-footer reveal delay-2">
+                Created by <a href="https://www.instagram.com/elemento_artistica?igsh=MXViZ2RiMGRsaTB4eA==" target="_blank" rel="noopener noreferrer">elemento_artistica</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- --- ANIMATION HOOK ENGINE --- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOptions = {
+                root: null,
+                threshold: 0.15,
+                rootMargin: "0px 0px -40px 0px"
+            };
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    } else {
+                        entry.target.classList.remove("active");
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+</body>
+</html>
