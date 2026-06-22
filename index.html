@@ -400,21 +400,23 @@
     </main>
 
     <!-- --- ANIMATION HOOK ENGINE --- -->
-        <script>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
             const reveals = document.querySelectorAll(".reveal");
 
+            // We change the rootMargin to trigger earlier (when the section is 
+            // 20% into the screen instead of needing to be deep inside)
             const revealOptions = {
                 root: null,
                 threshold: 0.1,
-                rootMargin: "0px"
+                rootMargin: "-10% 0px -10% 0px"
             };
 
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("active");
-                        // This line ensures it stays revealed once triggered
+                        // Once revealed, keep it visible forever
                         observer.unobserve(entry.target);
                     }
                 });
